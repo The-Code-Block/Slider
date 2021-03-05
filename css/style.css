@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+
+    font-size: 62.5%;
+
+}
+
+body{
+
+    background-color: rgb(26, 26, 26);
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+
+header{
+    position: relative;
+    background-color: #5a2e98;
+    width: 100%;
+    padding: 10px 30px ;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+
+}
+
+.header-container{
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture{
+    position: absolute;
+    top: 15%;
+    width: 10%;
+    border-radius: 50%;
+    border: 2px solid rgb(145, 145, 145);
+    overflow: hidden;
+    box-shadow: #13001f 0px 0px 10px 0px;
+    /*transform: rotate(20deg);*/
+    
+}
+
+.profile-picture:hover {
+    animation: swing 3s infinite;
+}
+
+@keyframes swing{
+    50% {transform:  rotate(30deg);}
+}
+
+.team{
+    font-family:'Press Start 2P', cursive;
+    margin-left: 10%;
+    line-height: 15px;
+}
+
+.team span{
+    margin-left: 10px;
+}
+
+h1{
+
+    color: #fff;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: -20px;
+
+}
+
+.slider-container{
+
+    position: relative;
+    width: 60%;
+    margin: 50px auto 0px;
+    padding: 1px;
+    box-shadow: 0px 0px 50px black;
+}
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+figure{
+
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+
+}
+
+img{
+    width: 100%;
+    margin: 0 auto;
+}
+
+figcaption{
+
+    position:absolute;
+    bottom: 0;
+    color: black;
+    width: 100%;
+    height: 10%;
+    padding: 5px 10px;
+    text-align: end;
+    background-color:rgba(255,255,255, 0.8);
+    font-size: 1.5rem;
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+.nav-buttons{
+
+    position: absolute;
+    top: 50%;
+    width: 110%;
+    left: -5%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 3rem;
+
+}
+
+#start-slider{
+
+    width: 10%;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 3rem;
+
+}
+
+.articles-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.radio-selector{
+
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.radio{
+
+    width: 20px;
+    height: 5px;
+    margin-right: 2px;
+    background-color:#46424d;
+    
+}
+
+.selected-radio{
+    background-color:#5a2e98;
+}
+
+/*//////Articles/////////*/
+
+article{
+    text-align: center;
+    width: 45%;
+    margin: 0 auto;
+}
