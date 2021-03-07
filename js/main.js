@@ -3,7 +3,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var startButton = document.getElementById("start-slider");
-var images = document.querySelectorAll("figure");
+var images = document.querySelectorAll(".slider-image");
 var next = document.querySelector(".next"); 
 var previous = document.querySelector(".previous");
 var actual = 0;
