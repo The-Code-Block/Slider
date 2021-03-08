@@ -24,6 +24,33 @@ function launchSlider(){
 
 }
 
+function toggleAnimation(){
+
+    for(var i = 0 ; i < images.length ; i++){
+
+        if(images[i].classList.contains("active")){
+
+            
+            images[i].classList.remove("show");
+
+            images[i].classList.add("inactive");
+            images[i].classList.add("hide");
+            
+            actual = i ;
+            
+            setTimeout(function(){
+
+                images[actual].classList.remove("active");
+                
+            },20);
+
+        }else{
+            images[i].classList.add("hide");
+        }
+    }
+    
+}
+
 function makeRadio(){
 
     var radio = document.createElement("div");
@@ -54,12 +81,24 @@ function nextImage(){
     for( var i = 0 ; i < radio.length ; i++ ){
 
         if(radio[i].classList.contains("selected-radio")){
+
             actual = i;
+
+            images[i].classList.remove("active");
             images[i].classList.remove("hide");
+            
             images[i].classList.add("show");
+            images[i].classList.add("inactive");
+
+            setTimeout(function(){
+                images[actual].classList.remove("inactive");
+                images[actual].classList.add("active");
+            },20);
         }
 
     }
+
+   
 
     radio[actual].classList.remove("selected-radio");
     images[actual].classList.remove("show");
@@ -86,9 +125,18 @@ function previousImage(){
     for( var i = 0 ; i < radio.length ; i++ ){
 
         if(radio[i].classList.contains("selected-radio")){
+
             actual = i;
             images[i].classList.add("hide");
+            images[i].classList.add("inactive");
+
             images[i].classList.remove("show");
+            images[i].classList.remove("active");
+
+            setTimeout(function(){
+                images[actual].classList.remove("inactive");
+                images[actual].classList.add("active");
+            },20);
         }
 
     }
@@ -165,21 +213,33 @@ function showImage(){
         for( var i = 0 ; i < radio.length ; i++){
 
             radio[i].classList.remove("selected-radio");
+            images[i].classList.remove("active");
             images[i].classList.remove("show");
             images[i].classList.add("hide");
+            images[i].classList.add("inactive");
 
         }
 
         event.target.classList.add("selected-radio");
-        
+
         for( var i = 0 ; i < radio.length ; i++ ){
 
             if(radio[i].classList.contains("selected-radio")){
-                
+    
+                actual = i;
+    
+                images[i].classList.remove("active");
                 images[i].classList.remove("hide");
+                
                 images[i].classList.add("show");
+                images[i].classList.add("inactive");
+    
+                setTimeout(function(){
+                    images[actual].classList.remove("inactive");
+                    images[actual].classList.add("active");
+                },20);
             }
-
+    
         }
 
     })
