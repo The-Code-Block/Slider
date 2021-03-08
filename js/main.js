@@ -15,6 +15,7 @@ var actual = 0;
 function launchSlider(){
 
     makeRadio();
+    startSlider();
     next.addEventListener("click",nextImage);
     previous.addEventListener("click",previousImage);
     startButton.addEventListener("click",startSlider);
@@ -161,7 +162,7 @@ function previousImage(){
 
 function startSlider(){
 
-    interval = setInterval(nextImage, 3000);
+    interval = setInterval(nextImage, 5000);
 
     startButton.removeEventListener("click",startSlider);
 

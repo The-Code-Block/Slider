@@ -19,30 +19,35 @@ body{
 
 }
 
+/*////HEADER//////*/
 
 header{
     
     position: relative;
     background-color: #5a2e98;
     width: 100%;
-    padding: 10px 30px ;
+
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
+   
+    margin: 0px auto;
     
 
 }
 
 .header-container{
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
 }
 
 .profile-picture{
 
     position: absolute;
     top: 40%;
-    left: 5%;
-    width: 25%;
+    left: 2.5%;
+    width: 20%;
     border-radius: 50%;
     border: 2px solid rgb(145, 145, 145);
     overflow: hidden;
@@ -54,41 +59,91 @@ header{
     animation: swing 3s infinite;
 }
 
+.team{
+
+    font-family:'Press Start 2P', cursive;
+    margin-left: 15%;
+    min-width: 50%;
+    line-height: 15px;
+    font-size: 0.8rem;
+
+}
+
+.team span{
+
+    margin-left: 15px;
+
+}
+
+h1{
+
+    color: #fff;
+    text-align: center;
+    font-size: 1.4rem;
+    animation: moveInRight 4s ease-out;
+
+}
+
+/*Animations for header*/
+
 @keyframes swing{
     50% {transform:  rotate(30deg);}
 }
 
-.team{
-    font-family:'Press Start 2P', cursive;
-    margin-left: 20%;
-    line-height: 15px;
+@keyframes moveInRight{
+
+    0%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translate(0);
+    }
+
 }
 
-.team span{
-    margin-left: 15px;
-}
 
-h1{
-    color: #fff;
-    text-align: center;
+/*//////////////////////////////Slider//////////////////*/
+
+.flex-slider-container{
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+
 }
 
 .slider-container{
 
     position: relative;
     overflow: hidden;
-    width: 100%;
-    height: 100%;
     margin: 50px auto 0px;
     padding: 1px;
     box-shadow: 0px 0px 50px black;
+    border-radius: 10px;
     
 }
+
+.next-button, .prev-button{
+    position: absolute;
+    top: 33%;
+    z-index: 1;
+    font-size: 2rem;
+    opacity: 0.6;
+}
+
+.next-button:active, .prev-button:active{
+    animation: bounce 3s;
+}
+
+.next-button{
+    right: 0;
+}
+
 
 
 .show{
     display: block;
-
 }
 
 .hide{
@@ -97,13 +152,13 @@ h1{
 
 .active{
     opacity: 1;
-    transform: translatex(0);
+    animation: moveInLeft 1s;
     
 }
 
 .inactive{
     opacity: 0;
-    transform: translatex(-100%);
+    
 }
 
 
@@ -113,10 +168,10 @@ h1{
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
-    transition:transform ease-out 0.8s, opacity 1s linear;
+    transition:  opacity 1s linear;
+   
     
 }
-
 
 img{
     width: 100%;
@@ -135,17 +190,6 @@ figcaption{
     background-color:rgba(0, 0, 0, 0.6);
     font-size: 1.5rem;
     font-family: 'Roboto Condensed', sans-serif;
-
-}
-
-.nav-buttons{
-
-    position: absolute;
-    top: 45%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 3rem;
 
 }
 
@@ -190,6 +234,44 @@ figcaption{
     background-color:#5a2e98;
 }
 
+/*Animation for Slider*/
+
+@keyframes moveInLeft{
+
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    80%{
+
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes bounce{
+    0%{
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+    20%{
+        transform: translateY(-40px);
+    }
+
+    80%{
+        transform: translateY(5px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
 /*//////Articles/////////*/
 
 article{
@@ -210,6 +292,8 @@ article img{
 
     .profile-picture{
         width: 15%;
+        top: 5px;
+      
     }
 
     .team{
@@ -239,16 +323,29 @@ article img{
         margin-left: 12%;
     }
 
+    .flex-slider-container{
+        justify-content: center;
+    }
 
     .slider-container{
         width: 80%;
-        margin: 50 auto;
     }
 
-    .nav-buttons{
-        width: 110%;
-        left: -5%;
+    .prev-button, .next-button{
+
+       top: 50%;
+       left: 10%;
+       
     }
+
+    .next-button{
+        right: 0;
+    }
+    
+    .prev-button:hover, .next-button:hover{
+        opacity: 1;
+    }
+
 
     figcaption{
         padding: 10px;
