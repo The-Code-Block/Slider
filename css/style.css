@@ -79,9 +79,13 @@ h1{
 
     color: #fff;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     animation: moveInRight 4s ease-out;
 
+}
+
+h1 span{
+    font-size: 1.7rem;
 }
 
 /*Animations for header*/
@@ -314,9 +318,16 @@ article img{
 
 @media only screen and (min-width: 1025px){
 
+    header .header-container{
+
+        padding: 20px;
+
+
+    }
 
     .profile-picture{
         width: 10%;
+        top: 20px;
     }
 
     .team{
@@ -331,15 +342,19 @@ article img{
         width: 80%;
     }
 
-    .prev-button, .next-button{
+    .prev-button{
 
-       top: 50%;
-       left: 10%;
+        top: 65%;
+        left: 10%;
+        font-size: 3rem;
        
     }
 
     .next-button{
-        right: 0;
+
+        font-size: 3rem;
+        top: 65%;
+        right: 10%;
     }
     
     .prev-button:hover, .next-button:hover{
